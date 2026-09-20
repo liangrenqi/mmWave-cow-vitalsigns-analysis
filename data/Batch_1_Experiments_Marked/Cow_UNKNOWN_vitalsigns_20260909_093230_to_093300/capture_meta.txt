@@ -1,0 +1,54 @@
+# ===== 判定 =====
+verdict=GOOD
+verdict_reason=通过: L0/L1/L2 pcap, tcpdump 缓冲, 内核 UDP drops, bin 总量, L3 bin≡pcap, RX 通道；未判定: csv
+checks_total=7
+checks_passed=6
+checks_failed=0
+checks_unknown=1
+
+# ----- 逐项判据（PASS/FAIL/UNKNOWN + 说明）-----
+check.csv=UNKNOWN
+check.csv.detail=cow_vitalsigns_Raw_LogFile.csv 为空 —— CLI_Record 未写出汇总（见 wait_for_csv 注释）
+check.l0l1l2_pcap=PASS
+check.l0l1l2_pcap.detail=序号+卡自报+实收 全部相符
+check.tcpdump_buffer=PASS
+check.tcpdump_buffer.detail=dropped by kernel = 0
+check.kernel_udp_drops=PASS
+check.kernel_udp_drops.detail=内核 UDP drops: 起始 0 峰值 0 增量 0（采样 86 次）
+check.bin_total=PASS
+check.bin_total.detail=78,643,200 B / 应 78,643,200 B  差 0 B
+check.l3_bytewise=PASS
+check.l3_bytewise.detail=L3 比对     : 78,643,200 B  用时 1.2 s (65.0 MB/s) | >>> L3 完整形式通过：逐字节完全一致 <<<
+check.rx_channels=PASS
+check.rx_channels.detail=4 路均有信号  RX0=296.5 RX1=307.0 RX2=319.0 RX3=416.0
+
+# ----- 采集参数 -----
+cow_id=UNKNOWN
+mode=vitalsigns
+note=
+cfg_file=cow_vitalsigns.cfg
+json_file=dca1000_vitalsigns.json
+frames=600
+period_ms=50
+loops=32
+duration_sec=30
+samples=256
+tx_count=1
+rx_count=4
+channel_cfg=15 1 0
+frame_bytes=131072
+expect_total_bytes=78643200
+data_rate_MBps=2.621
+start=2026-09-09 09:32:30
+end=2026-09-09 09:33:00
+bin_total_bytes=78643200
+bin_files=1
+packet_delay_us=25
+pcap=yes
+host=raspberrypi
+
+# ----- 原始判据输出（排查用）-----
+csv_verdict=cow_vitalsigns_Raw_LogFile.csv 为空 —— CLI_Record 未写出汇总（见 wait_for_csv 注释）
+pcap_verdict=L0 54014 包 序号 594155→648168, 丢失 0 重复 0 乱序 0, 2.46 MB/s |    （首包累计 865,075,200 B —— FPGA 上电后的历史累计，已按增量扣除） | L2 卡自报增量 78,643,200 B vs 实收 78,643,200 B, 差 0 B | L1 应产生 78,643,200 B vs 卡自报增量 78,643,200 B, 差 0 B
+kernel_udp_drops_delta=0
+tcpdump_stats=54014 packets captured 54014 packets received by filter 0 packets dropped by kernel

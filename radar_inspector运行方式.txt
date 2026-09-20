@@ -1,0 +1,1 @@
+C:\\Users\\34219\\AppData\\Local\\Programs\\Python\\Python39\\python.exe radar_inspector.py data\Cow_UNKNOWN_vitalsigns_20260903_142256_to_142356

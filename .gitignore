@@ -1,0 +1,22 @@
+# ===== 原始采集数据：只读，体积 21 GB，不入库 =====
+*.bin
+*.pcap
+
+# ===== 派生结果：全部可由 bin 重算，不入库 =====
+*.npy
+*.npz
+*.png
+data/**/0[1-8]_*.csv
+data/**/*_Raw_LogFile.csv
+data/**/阅读指南.md
+batch_explain_results/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+
+# ===== 例外：人工标注与采集判据，不可重算，必须入库 =====
+# data_info.csv  手工记录：受试者/工况/手环心率/自数呼吸/有无亚克力板/脉搏真值
+# capture_meta.txt  采集时的七项判据与波形参数
+!data/**/data_info.csv
+!data/**/capture_meta.txt
