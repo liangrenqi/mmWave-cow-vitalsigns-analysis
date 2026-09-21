@@ -10,6 +10,7 @@ data/**/0[1-8]_*.csv
 data/**/*_Raw_LogFile.csv
 data/**/阅读指南.md
 batch_explain_results/
+诊断输出/
 
 # ===== Python =====
 __pycache__/
