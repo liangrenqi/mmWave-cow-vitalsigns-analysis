@@ -18,9 +18,9 @@ check.kernel_udp_drops.detail=内核 UDP drops: 起始 0 峰值 0 增量 0（采
 check.bin_total=PASS
 check.bin_total.detail=78,643,200 B / 应 78,643,200 B  差 0 B
 check.l3_bytewise=PASS
-check.l3_bytewise.detail=L3 比对     : 78,643,200 B  用时 1.2 s (64.7 MB/s) | >>> L3 完整形式通过：逐字节完全一致 <<<
+check.l3_bytewise.detail=L3 比对     : 78,643,200 B  用时 1.2 s (65.4 MB/s) | >>> L3 完整形式通过：逐字节完全一致 <<<
 check.rx_channels=PASS
-check.rx_channels.detail=4 路均有信号  RX0=779.3 RX1=840.8 RX2=933.1 RX3=585.3
+check.rx_channels.detail=4 路均有信号  RX0=1343.5 RX1=1170.6 RX2=1148.7 RX3=1282.6
 
 # ----- 采集参数 -----
 cow_id=UNKNOWN
@@ -39,8 +39,8 @@ channel_cfg=15 1 0
 frame_bytes=131072
 expect_total_bytes=78643200
 data_rate_MBps=2.621
-start=2026-09-21 14:40:58
-end=2026-09-21 14:41:28
+start=2026-09-22 15:14:34
+end=2026-09-22 15:15:04
 bin_total_bytes=78643200
 bin_files=1
 packet_delay_us=25
@@ -49,6 +49,6 @@ host=raspberrypi
 
 # ----- 原始判据输出（排查用）-----
 csv_verdict=cow_vitalsigns_Raw_LogFile.csv 为空 —— CLI_Record 未写出汇总（见 wait_for_csv 注释）
-pcap_verdict=L0 54014 包 序号 270071→324084, 丢失 0 重复 0 乱序 0, 2.46 MB/s |    （首包累计 393,216,000 B —— FPGA 上电后的历史累计，已按增量扣除） | L2 卡自报增量 78,643,200 B vs 实收 78,643,200 B, 差 0 B | L1 应产生 78,643,200 B vs 卡自报增量 78,643,200 B, 差 0 B
+pcap_verdict=L0 54014 包 序号 540141→594154, 丢失 0 重复 0 乱序 0, 2.46 MB/s |    （首包累计 786,432,000 B —— FPGA 上电后的历史累计，已按增量扣除） | L2 卡自报增量 78,643,200 B vs 实收 78,643,200 B, 差 0 B | L1 应产生 78,643,200 B vs 卡自报增量 78,643,200 B, 差 0 B
 kernel_udp_drops_delta=0
 tcpdump_stats=54014 packets captured 54014 packets received by filter 0 packets dropped by kernel
