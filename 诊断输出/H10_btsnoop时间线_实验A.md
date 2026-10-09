@@ -1,0 +1,421 @@
+# btsnoop 时间线（省略 HR/PMD 数据通知与续传分片；t=0 为首个 Connection Complete）
+
+## H10原始日志/rootA_r1.btsnoop
+
+HR 通知 126、PMD 数据包 900、首个 PMD 在 t=4.685758
+
+```
+    0.000  EVT LE Connection Complete 0040000000d4cc11acac24270000002a0000
+    0.014  CMD 0x2016 LE Read Remote Features 4000
+    0.014  EVT Command Status 0x2016 LE Read Remote Features 状态 00
+    0.172  EVT LE Read Remote Features 0040002500000000000000
+    0.172  TX Pi→H10 ATT Exchange MTU Req【请求】 0502
+    0.318  EVT LE Data Length Change 4000ec00d007ec00d007
+    0.367  RX H10→Pi ATT Exchange MTU Rsp e800
+    0.367  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff3a2b
+    0.464  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    0.464  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0028
+    0.563  RX H10→Pi ATT Read By Group Type Rsp 060100090000180a000d0001180e0013000d18140022000a18230026000f18
+    0.563  TX Pi→H10 ATT Read By Group Type Req【请求】 2700ffff0028
+    0.709  RX H10→Pi ATT Read By Group Type Rsp 1427002c00f3ecd74555a45aad401131fb4bff17622d003300c8f08d2dcd8aad1c87f3e702805c00fb
+    0.709  TX Pi→H10 ATT Read By Group Type Req【请求】 3400ffff0028
+    0.854  RX H10→Pi ATT Read By Group Type Rsp 063400ffffeefe
+    0.854  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0128
+    0.952  RX H10→Pi ATT Error Rsp 对 Read By Group Type Req 句柄 0x0001 错误 0x0a
+    0.952  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0228
+    1.049  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    1.049  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0328
+    1.148  RX H10→Pi ATT Read By Type Rsp 070200020300002a0400020500012a0600020700042a0800020900a62a0b00200c00052a0f00101000372a1200021300382a1500021600292a1700021800242a1900021a00252a1b00021c00272a1d00021e00262a1f00022000282a2100022200232a2400122500192a
+    1.148  TX Pi→H10 ATT Read By Type Req【请求】 2500ffff0328
+    1.295  RX H10→Pi ATT Read By Type Rsp 1528000229002d8e7086d93a8013fbb1ecc84cff17622a00242b00f3a1a8bdd37c2a7ed091bb914dff17622e002a2f00c8f08d2dcd8aad1c87f3e702815c00fb3100103200c8f08d2dcd8aad1c87f3e702825c00fb35001c3600c8f08d2dcd8aad1c87f3e702515c00fb3800103900c8f08d2dcd8aad1c87f3e702525c00fb3b000c3c00c8f08d2dcd8aad1c87f3e702535c00fb
+    1.295  TX Pi→H10 ATT Read By Type Req【请求】 3c00ffff0328
+    1.391  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x003c 错误 0x0a
+    1.391  TX Pi→H10 ATT Find Info Req【请求】 3d00ffff
+    1.537  RX H10→Pi ATT Error Rsp 对 Find Info Req 句柄 0x003d 错误 0x0a
+    1.552  TX Pi→H10 ATT Write Req【请求】 0d000200
+    1.634  RX H10→Pi ATT Write Rsp 
+    1.635  TX Pi→H10 ATT Read Req【请求】 0300
+    1.781  RX H10→Pi ATT Read Rsp 506f6c617220483130203131434344343338
+    1.781  TX Pi→H10 ATT Read Req【请求】 0500
+    1.878  RX H10→Pi ATT Read Rsp 4103
+    1.878  TX Pi→H10 ATT Read Req【请求】 2500
+    1.976  RX H10→Pi SMP Security Req 09
+    1.976  TX Pi→H10 SMP Pairing Req 010009100d0f
+    2.024  RX H10→Pi ATT Read Rsp 64
+    2.024  TX Pi→H10 ATT Read Req【请求】 2f00
+    2.073  RX H10→Pi SMP Pairing Rsp 030009100103
+    2.122  RX H10→Pi ATT Error Rsp 对 Read Req 句柄 0x002f 错误 0x05
+    2.154  TX Pi→H10 SMP Pairing Public Key ee21402e7df19b92acb44227107aafe6c770dfa4f7dd116dc9cc8da32769fae832f6874e370528c382d3947a568c606d45d931a5919ba1a0a0de9f65b733ede9
+    2.269  RX H10→Pi SMP Pairing Public Key 96aec556fc4419537d4d0181ff2146eea6a401be335b1d8fe79a5af70b3159001edf49dac4810492bd4239614033f9f838eb09633bd70504ad53064b65d529fb
+    2.269  RX H10→Pi SMP Pairing Confirm 40b6390deaf13c25688507d49cc166d6
+    2.269  TX Pi→H10 SMP Pairing Random 6f178adab1f894968c5b2ec7bc91fe4c
+    2.366  RX H10→Pi SMP Pairing Random b87c59b33cc3ca1471d262c2defec2c9
+    2.366  TX Pi→H10 SMP DHKey Check 871da05c678e88e0f31f7100c7cf5c80
+    2.658  RX H10→Pi SMP DHKey Check 2969040a4a63a15c21d0364f9d1ef5ed
+    2.658  CMD 0x2019 LE Start Encryption 40000000000000000000000069e7b373235f79b786b485380d8566e4
+    2.659  EVT Command Status 0x2019 LE Start Encryption 状态 00
+    3.048  EVT Encryption Change 00400001
+    3.048  CMD 0x0c7c  4000b80b
+    3.048  TX Pi→H10 ATT Read Req【请求】 2f00
+    3.049  EVT Command Complete 0x0c7c  状态 00
+    3.097  RX H10→Pi SMP Identity Info ac0b2efde582b3253f1808d526020e1f
+    3.146  RX H10→Pi SMP Identity Addr Info 00d4cc11acac24
+    3.292  RX H10→Pi ATT Read Rsp 0f05000000000000000000000000000000
+    3.292  TX Pi→H10 ATT Write Req【请求】 26000100
+    3.389  RX H10→Pi ATT Write Rsp 
+    3.389  TX Pi→H10 ATT Write Req【请求】 30000200
+    3.584  RX H10→Pi ATT Write Rsp 
+    3.585  TX Pi→H10 ATT Write Req【请求】 33000100
+    3.682  RX H10→Pi ATT Write Rsp 
+    3.682  TX Pi→H10 ATT Write Req【请求】 11000100
+    3.779  RX H10→Pi ATT Write Rsp 
+    3.780  TX Pi→H10 ATT Write Req【请求】 2f000100
+    3.877  RX H10→Pi ATT Write Rsp 
+    3.877  RX H10→Pi ATT Indicate 句柄 0x002f f0010000000001820001010e00
+    3.878  TX Pi→H10 ATT Confirm 
+    3.879  TX Pi→H10 ATT Write Req【请求】 2f0002000001820001010e00
+    3.974  RX H10→Pi ATT Write Rsp 
+    3.975  RX H10→Pi ATT Indicate 句柄 0x002f f00200000000
+    3.975  TX Pi→H10 ATT Confirm 
+    3.975  RX H10→Pi L2CAP 信令 code 0x12 0308001000280000005802
+    3.975  TX Pi→H10 L2CAP 信令 code 0x13 0302000000
+    3.975  CMD 0x2013 LE Conn Update 4000100028000000580200000000
+    3.976  EVT Command Status 0x2013 LE Conn Update 状态 00
+    3.992  TX Pi→H10 ATT Write Req【请求】 2f000102
+    4.218  RX H10→Pi ATT Write Rsp 
+    4.219  RX H10→Pi ATT Indicate 句柄 0x002f f0010200000004190032006400c800010110000203020004000800
+    4.220  TX Pi→H10 ATT Confirm 
+    4.220  TX Pi→H10 ATT Write Req【请求】 2f0002020001c8000101100002010800
+    4.315  RX H10→Pi ATT Write Rsp 
+    4.316  RX H10→Pi ATT Indicate 句柄 0x002f f00202000001
+    4.316  TX Pi→H10 ATT Confirm 
+    4.391  EVT LE Conn Update Complete 004000270000005802
+    4.686  **首个 PMD 数据包** RX H10→Pi PMD 数据 类型 02 L2CAP 长 229（此前 HR 通知 1 个）
+   64.323  TX Pi→H10 ATT Write Req【请求】 2f000300
+   64.400  RX H10→Pi ATT Write Rsp 
+   64.400  RX H10→Pi ATT Indicate 句柄 0x002f f003000000
+   64.401  TX Pi→H10 ATT Confirm 
+   64.401  TX Pi→H10 ATT Write Req【请求】 2f000302
+   64.497  RX H10→Pi ATT Write Rsp 
+   64.498  RX H10→Pi ATT Indicate 句柄 0x002f f003020000
+   64.498  TX Pi→H10 ATT Confirm 
+   66.399  CMD 0x0406 Disconnect 400013
+   66.399  EVT Command Status 0x0406 Disconnect 状态 00
+   66.497  EVT Disconnection Complete 00400016
+  117.844  CMD 0x2005  c6b4ff3c1727
+  117.844  EVT Command Complete 0x2005  状态 00
+  117.844  CMD 0x200b  01120012000100
+  117.845  EVT Command Complete 0x200b  状态 00
+  118.074  CMD 0x2005  3be23913eb01
+  118.074  EVT Command Complete 0x2005  状态 00
+  118.074  CMD 0x200b  01120012000100
+  118.074  EVT Command Complete 0x200b  状态 00
+  118.248  CMD 0x200b  00600060000001
+  118.248  EVT Command Complete 0x200b  状态 00
+  119.748  CMD 0x200d LE Create Connection 600060000000d4cc11acac24001800280000002a0000000000
+  119.748  EVT Command Status 0x200d LE Create Connection 状态 00
+  120.252  EVT LE Connection Complete 0040000000d4cc11acac24270000002a0000
+  120.266  CMD 0x2016 LE Read Remote Features 4000
+  120.266  EVT Command Status 0x2016 LE Read Remote Features 状态 00
+  120.428  EVT LE Read Remote Features 0040002500000000000000
+  120.428  TX Pi→H10 ATT Exchange MTU Req【请求】 0502
+  120.574  EVT LE Data Length Change 4000ec00d007ec00d007
+  120.671  RX H10→Pi ATT Exchange MTU Rsp e800
+  120.671  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff3a2b
+  120.769  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+  120.769  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0028
+  120.867  RX H10→Pi ATT Read By Group Type Rsp 060100090000180a000d0001180e0013000d18140022000a18230026000f18
+  120.867  TX Pi→H10 ATT Read By Group Type Req【请求】 2700ffff0028
+  120.964  RX H10→Pi ATT Read By Group Type Rsp 1427002c00f3ecd74555a45aad401131fb4bff17622d003300c8f08d2dcd8aad1c87f3e702805c00fb
+  120.964  TX Pi→H10 ATT Read By Group Type Req【请求】 3400ffff0028
+  121.061  RX H10→Pi ATT Read By Group Type Rsp 063400ffffeefe
+  121.061  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0128
+  121.207  RX H10→Pi ATT Error Rsp 对 Read By Group Type Req 句柄 0x0001 错误 0x0a
+  121.207  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0228
+  121.354  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+  121.354  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0328
+  121.550  RX H10→Pi ATT Read By Type Rsp 070200020300002a0400020500012a0600020700042a0800020900a62a0b00200c00052a0f00101000372a1200021300382a1500021600292a1700021800242a1900021a00252a1b00021c00272a1d00021e00262a1f00022000282a2100022200232a2400122500192a
+  121.550  TX Pi→H10 ATT Read By Type Req【请求】 2500ffff0328
+  121.648  RX H10→Pi ATT Read By Type Rsp 1528000229002d8e7086d93a8013fbb1ecc84cff17622a00242b00f3a1a8bdd37c2a7ed091bb914dff17622e002a2f00c8f08d2dcd8aad1c87f3e702815c00fb3100103200c8f08d2dcd8aad1c87f3e702825c00fb35001c3600c8f08d2dcd8aad1c87f3e702515c00fb3800103900c8f08d2dcd8aad1c87f3e702525c00fb3b000c3c00c8f08d2dcd8aad1c87f3e702535c00fb
+  121.648  TX Pi→H10 ATT Read By Type Req【请求】 3c00ffff0328
+  121.744  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x003c 错误 0x0a
+  121.744  TX Pi→H10 ATT Find Info Req【请求】 3d00ffff
+  121.841  RX H10→Pi ATT Error Rsp 对 Find Info Req 句柄 0x003d 错误 0x0a
+  121.857  TX Pi→H10 ATT Write Req【请求】 0d000200
+  121.939  RX H10→Pi ATT Write Rsp 
+  121.939  TX Pi→H10 ATT Read Req【请求】 0300
+  122.037  RX H10→Pi ATT Read Rsp 506f6c617220483130203131434344343338
+  122.037  TX Pi→H10 ATT Read Req【请求】 0500
+  122.134  RX H10→Pi ATT Read Rsp 4103
+  122.134  TX Pi→H10 ATT Read Req【请求】 2500
+  122.231  RX H10→Pi ATT Read Rsp 64
+  122.231  TX Pi→H10 ATT Read Req【请求】 2f00
+  122.232  RX H10→Pi SMP Security Req 09
+  122.232  TX Pi→H10 SMP Pairing Req 010009100d0f
+  122.280  RX H10→Pi ATT Error Rsp 对 Read Req 句柄 0x002f 错误 0x05
+  122.426  RX H10→Pi SMP Pairing Rsp 030009100103
+  122.427  TX Pi→H10 SMP Pairing Public Key d8f30ca71433162bac1593283572e5af6245c1619cf3835b502055136f4cf3a3519dbc9b41a64482842135ada938d073d2773f3772e4f38f7e1ab0fbf86e7a9e
+  122.524  RX H10→Pi SMP Pairing Public Key 96aec556fc4419537d4d0181ff2146eea6a401be335b1d8fe79a5af70b3159001edf49dac4810492bd4239614033f9f838eb09633bd70504ad53064b65d529fb
+  122.525  RX H10→Pi SMP Pairing Confirm f3c1dd8e4c2c1a45d1f4cbf9b9696e41
+  122.525  TX Pi→H10 SMP Pairing Random a3a2e7f32396959111c638ef3c96bac7
+  122.621  RX H10→Pi SMP Pairing Random 2b03a3de84942951a4fed91081454777
+  122.621  TX Pi→H10 SMP DHKey Check 6c4428ea43ad43b834ba0a652006a297
+  122.865  RX H10→Pi SMP DHKey Check 36f04229d8b204ea3725e611ea185c56
+  122.865  CMD 0x2019 LE Start Encryption 400000000000000000000000a74597665cda4a394154abc1d122c665
+  122.866  EVT Command Status 0x2019 LE Start Encryption 状态 00
+  123.157  EVT Encryption Change 00400001
+  123.157  CMD 0x0c7c  4000b80b
+  123.157  TX Pi→H10 ATT Read Req【请求】 2f00
+  123.158  EVT Command Complete 0x0c7c  状态 00
+  123.206  RX H10→Pi SMP Identity Info ac0b2efde582b3253f1808d526020e1f
+  123.255  RX H10→Pi SMP Identity Addr Info 00d4cc11acac24
+  123.402  RX H10→Pi ATT Read Rsp 0f05000000000000000000000000000000
+  123.402  TX Pi→H10 ATT Write Req【请求】 26000100
+  123.596  RX H10→Pi ATT Write Rsp 
+  123.596  TX Pi→H10 ATT Write Req【请求】 30000200
+  123.694  RX H10→Pi ATT Write Rsp 
+  123.695  TX Pi→H10 ATT Write Req【请求】 33000100
+  123.791  RX H10→Pi ATT Write Rsp 
+  123.792  TX Pi→H10 ATT Write Req【请求】 11000100
+  123.889  RX H10→Pi ATT Write Rsp 
+  123.890  TX Pi→H10 ATT Write Req【请求】 2f000100
+  123.986  RX H10→Pi ATT Write Rsp 
+  123.987  RX H10→Pi ATT Indicate 句柄 0x002f f0010000000001820001010e00
+  123.987  TX Pi→H10 ATT Confirm 
+  123.988  TX Pi→H10 ATT Write Req【请求】 2f0002000001820001010e00
+  124.084  RX H10→Pi ATT Write Rsp 
+  124.084  RX H10→Pi ATT Indicate 句柄 0x002f f00200000000
+  124.084  TX Pi→H10 ATT Confirm 
+  124.085  RX H10→Pi L2CAP 信令 code 0x12 0308001000280000005802
+  124.085  TX Pi→H10 L2CAP 信令 code 0x13 0302000000
+  124.085  CMD 0x2013 LE Conn Update 4000100028000000580200000000
+  124.086  EVT Command Status 0x2013 LE Conn Update 状态 00
+  124.100  TX Pi→H10 ATT Write Req【请求】 2f000102
+  124.279  RX H10→Pi ATT Write Rsp 
+  124.280  RX H10→Pi ATT Indicate 句柄 0x002f f0010200000004190032006400c800010110000203020004000800
+  124.280  TX Pi→H10 ATT Confirm 
+  124.281  TX Pi→H10 ATT Write Req【请求】 2f0002020001c8000101100002010800
+  124.468  RX H10→Pi ATT Write Rsp 
+  124.469  EVT LE Conn Update Complete 004000270000005802
+  124.517  RX H10→Pi ATT Indicate 句柄 0x002f f00202000001
+  124.518  TX Pi→H10 ATT Confirm 
+  184.524  TX Pi→H10 ATT Write Req【请求】 2f000300
+  184.576  RX H10→Pi ATT Write Rsp 
+  184.577  RX H10→Pi ATT Indicate 句柄 0x002f f003000000
+  184.577  TX Pi→H10 ATT Confirm 
+  184.578  TX Pi→H10 ATT Write Req【请求】 2f000302
+  184.674  RX H10→Pi ATT Write Rsp 
+  184.674  RX H10→Pi ATT Indicate 句柄 0x002f f003020000
+  184.674  TX Pi→H10 ATT Confirm 
+  187.399  CMD 0x0406 Disconnect 400013
+  187.399  EVT Command Status 0x0406 Disconnect 状态 00
+  187.404  EVT Disconnection Complete 00400016
+```
+
+## H10原始日志/rootA_r2.btsnoop
+
+HR 通知 63、PMD 数据包 451、首个 PMD 在 t=4.512091
+
+```
+    0.000  EVT LE Connection Complete 0040000000d4cc11acac24270000002a0000
+    0.014  CMD 0x2016 LE Read Remote Features 4000
+    0.015  EVT Command Status 0x2016 LE Read Remote Features 状态 00
+    0.176  EVT LE Read Remote Features 0040002500000000000000
+    0.176  TX Pi→H10 ATT Exchange MTU Req【请求】 0502
+    0.322  EVT LE Data Length Change 4000ec00d007ec00d007
+    0.419  RX H10→Pi ATT Exchange MTU Rsp e800
+    0.419  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff3a2b
+    0.517  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    0.517  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0028
+    0.615  RX H10→Pi ATT Read By Group Type Rsp 060100090000180a000d0001180e0013000d18140022000a18230026000f18
+    0.615  TX Pi→H10 ATT Read By Group Type Req【请求】 2700ffff0028
+    0.713  RX H10→Pi ATT Read By Group Type Rsp 1427002c00f3ecd74555a45aad401131fb4bff17622d003300c8f08d2dcd8aad1c87f3e702805c00fb
+    0.713  TX Pi→H10 ATT Read By Group Type Req【请求】 3400ffff0028
+    0.809  RX H10→Pi ATT Read By Group Type Rsp 063400ffffeefe
+    0.810  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0128
+    0.956  RX H10→Pi ATT Error Rsp 对 Read By Group Type Req 句柄 0x0001 错误 0x0a
+    0.956  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0228
+    1.102  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    1.102  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0328
+    1.298  RX H10→Pi ATT Read By Type Rsp 070200020300002a0400020500012a0600020700042a0800020900a62a0b00200c00052a0f00101000372a1200021300382a1500021600292a1700021800242a1900021a00252a1b00021c00272a1d00021e00262a1f00022000282a2100022200232a2400122500192a
+    1.299  TX Pi→H10 ATT Read By Type Req【请求】 2500ffff0328
+    1.396  RX H10→Pi ATT Read By Type Rsp 1528000229002d8e7086d93a8013fbb1ecc84cff17622a00242b00f3a1a8bdd37c2a7ed091bb914dff17622e002a2f00c8f08d2dcd8aad1c87f3e702815c00fb3100103200c8f08d2dcd8aad1c87f3e702825c00fb35001c3600c8f08d2dcd8aad1c87f3e702515c00fb3800103900c8f08d2dcd8aad1c87f3e702525c00fb3b000c3c00c8f08d2dcd8aad1c87f3e702535c00fb
+    1.396  TX Pi→H10 ATT Read By Type Req【请求】 3c00ffff0328
+    1.492  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x003c 错误 0x0a
+    1.492  TX Pi→H10 ATT Find Info Req【请求】 3d00ffff
+    1.589  RX H10→Pi ATT Error Rsp 对 Find Info Req 句柄 0x003d 错误 0x0a
+    1.605  TX Pi→H10 ATT Write Req【请求】 0d000200
+    1.687  RX H10→Pi ATT Write Rsp 
+    1.687  TX Pi→H10 ATT Read Req【请求】 0300
+    1.785  RX H10→Pi ATT Read Rsp 506f6c617220483130203131434344343338
+    1.785  TX Pi→H10 ATT Read Req【请求】 0500
+    1.882  RX H10→Pi ATT Read Rsp 4103
+    1.882  TX Pi→H10 ATT Read Req【请求】 2500
+    1.979  RX H10→Pi ATT Read Rsp 64
+    1.979  TX Pi→H10 ATT Read Req【请求】 2f00
+    1.980  RX H10→Pi SMP Security Req 09
+    1.980  TX Pi→H10 SMP Pairing Req 010009100d0f
+    2.029  RX H10→Pi ATT Error Rsp 对 Read Req 句柄 0x002f 错误 0x05
+    2.174  RX H10→Pi SMP Pairing Rsp 030009100103
+    2.176  TX Pi→H10 SMP Pairing Public Key d8f30ca71433162bac1593283572e5af6245c1619cf3835b502055136f4cf3a3519dbc9b41a64482842135ada938d073d2773f3772e4f38f7e1ab0fbf86e7a9e
+    2.272  RX H10→Pi SMP Pairing Public Key 96aec556fc4419537d4d0181ff2146eea6a401be335b1d8fe79a5af70b3159001edf49dac4810492bd4239614033f9f838eb09633bd70504ad53064b65d529fb
+    2.273  RX H10→Pi SMP Pairing Confirm f3c1dd8e4c2c1a45d1f4cbf9b9696e41
+    2.273  TX Pi→H10 SMP Pairing Random a3a2e7f32396959111c638ef3c96bac7
+    2.369  RX H10→Pi SMP Pairing Random 2b03a3de84942951a4fed91081454777
+    2.370  TX Pi→H10 SMP DHKey Check 6c4428ea43ad43b834ba0a652006a297
+    2.613  RX H10→Pi SMP DHKey Check 36f04229d8b204ea3725e611ea185c56
+    2.613  CMD 0x2019 LE Start Encryption 400000000000000000000000a74597665cda4a394154abc1d122c665
+    2.614  EVT Command Status 0x2019 LE Start Encryption 状态 00
+    2.906  EVT Encryption Change 00400001
+    2.906  CMD 0x0c7c  4000b80b
+    2.906  TX Pi→H10 ATT Read Req【请求】 2f00
+    2.906  EVT Command Complete 0x0c7c  状态 00
+    2.955  RX H10→Pi SMP Identity Info ac0b2efde582b3253f1808d526020e1f
+    3.003  RX H10→Pi SMP Identity Addr Info 00d4cc11acac24
+    3.150  RX H10→Pi ATT Read Rsp 0f05000000000000000000000000000000
+    3.150  TX Pi→H10 ATT Write Req【请求】 26000100
+    3.344  RX H10→Pi ATT Write Rsp 
+    3.344  TX Pi→H10 ATT Write Req【请求】 30000200
+    3.442  RX H10→Pi ATT Write Rsp 
+    3.443  TX Pi→H10 ATT Write Req【请求】 33000100
+    3.539  RX H10→Pi ATT Write Rsp 
+    3.540  TX Pi→H10 ATT Write Req【请求】 11000100
+    3.637  RX H10→Pi ATT Write Rsp 
+    3.638  TX Pi→H10 ATT Write Req【请求】 2f000100
+    3.734  RX H10→Pi ATT Write Rsp 
+    3.735  RX H10→Pi ATT Indicate 句柄 0x002f f0010000000001820001010e00
+    3.735  TX Pi→H10 ATT Confirm 
+    3.736  TX Pi→H10 ATT Write Req【请求】 2f0002000001820001010e00
+    3.832  RX H10→Pi ATT Write Rsp 
+    3.832  RX H10→Pi ATT Indicate 句柄 0x002f f00200000000
+    3.833  TX Pi→H10 ATT Confirm 
+    3.833  RX H10→Pi L2CAP 信令 code 0x12 0308001000280000005802
+    3.833  TX Pi→H10 L2CAP 信令 code 0x13 0302000000
+    3.833  CMD 0x2013 LE Conn Update 4000100028000000580200000000
+    3.834  EVT Command Status 0x2013 LE Conn Update 状态 00
+    3.848  TX Pi→H10 ATT Write Req【请求】 2f000102
+    4.027  RX H10→Pi ATT Write Rsp 
+    4.028  RX H10→Pi ATT Indicate 句柄 0x002f f0010200000004190032006400c800010110000203020004000800
+    4.028  TX Pi→H10 ATT Confirm 
+    4.029  TX Pi→H10 ATT Write Req【请求】 2f0002020001c8000101100002010800
+    4.217  RX H10→Pi ATT Write Rsp 
+    4.217  EVT LE Conn Update Complete 004000270000005802
+    4.266  RX H10→Pi ATT Indicate 句柄 0x002f f00202000001
+    4.266  TX Pi→H10 ATT Confirm 
+    4.512  **首个 PMD 数据包** RX H10→Pi PMD 数据 类型 02 L2CAP 长 229（此前 HR 通知 0 个）
+   64.272  TX Pi→H10 ATT Write Req【请求】 2f000300
+   64.324  RX H10→Pi ATT Write Rsp 
+   64.325  RX H10→Pi ATT Indicate 句柄 0x002f f003000000
+   64.325  TX Pi→H10 ATT Confirm 
+   64.326  TX Pi→H10 ATT Write Req【请求】 2f000302
+   64.422  RX H10→Pi ATT Write Rsp 
+   64.423  RX H10→Pi ATT Indicate 句柄 0x002f f003020000
+   64.423  TX Pi→H10 ATT Confirm 
+   67.147  CMD 0x0406 Disconnect 400013
+   67.148  EVT Command Status 0x0406 Disconnect 状态 00
+   67.153  EVT Disconnection Complete 00400016
+```
+
+## H10原始日志/rootA_r3.btsnoop
+
+HR 通知 63、PMD 数据包 449、首个 PMD 在 t=4.401524
+
+```
+    0.000  EVT LE Connection Complete 0040000000d4cc11acac24270000002a0000
+    0.022  CMD 0x2016 LE Read Remote Features 4000
+    0.022  EVT Command Status 0x2016 LE Read Remote Features 状态 00
+    0.105  EVT LE Read Remote Features 0040002500000000000000
+    0.105  TX Pi→H10 ATT Exchange MTU Req【请求】 0502
+    0.300  EVT LE Data Length Change 4000ec00d007ec00d007
+    0.349  RX H10→Pi ATT Exchange MTU Rsp e800
+    0.349  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff3a2b
+    0.495  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    0.495  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0028
+    0.593  RX H10→Pi ATT Read By Group Type Rsp 060100090000180a000d0001180e0013000d18140022000a18230026000f18
+    0.593  TX Pi→H10 ATT Read By Group Type Req【请求】 2700ffff0028
+    0.739  RX H10→Pi ATT Read By Group Type Rsp 1427002c00f3ecd74555a45aad401131fb4bff17622d003300c8f08d2dcd8aad1c87f3e702805c00fb
+    0.740  TX Pi→H10 ATT Read By Group Type Req【请求】 3400ffff0028
+    0.836  RX H10→Pi ATT Read By Group Type Rsp 063400ffffeefe
+    0.836  TX Pi→H10 ATT Read By Group Type Req【请求】 0100ffff0128
+    0.983  RX H10→Pi ATT Error Rsp 对 Read By Group Type Req 句柄 0x0001 错误 0x0a
+    0.983  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0228
+    1.178  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x0001 错误 0x0a
+    1.178  TX Pi→H10 ATT Read By Type Req【请求】 0100ffff0328
+    1.277  RX H10→Pi ATT Read By Type Rsp 070200020300002a0400020500012a0600020700042a0800020900a62a0b00200c00052a0f00101000372a1200021300382a1500021600292a1700021800242a1900021a00252a1b00021c00272a1d00021e00262a1f00022000282a2100022200232a2400122500192a
+    1.277  TX Pi→H10 ATT Read By Type Req【请求】 2500ffff0328
+    1.374  RX H10→Pi ATT Read By Type Rsp 1528000229002d8e7086d93a8013fbb1ecc84cff17622a00242b00f3a1a8bdd37c2a7ed091bb914dff17622e002a2f00c8f08d2dcd8aad1c87f3e702815c00fb3100103200c8f08d2dcd8aad1c87f3e702825c00fb35001c3600c8f08d2dcd8aad1c87f3e702515c00fb3800103900c8f08d2dcd8aad1c87f3e702525c00fb3b000c3c00c8f08d2dcd8aad1c87f3e702535c00fb
+    1.374  TX Pi→H10 ATT Read By Type Req【请求】 3c00ffff0328
+    1.470  RX H10→Pi ATT Error Rsp 对 Read By Type Req 句柄 0x003c 错误 0x0a
+    1.470  TX Pi→H10 ATT Find Info Req【请求】 3d00ffff
+    1.568  RX H10→Pi ATT Error Rsp 对 Find Info Req 句柄 0x003d 错误 0x0a
+    1.587  TX Pi→H10 ATT Write Req【请求】 0d000200
+    1.762  RX H10→Pi ATT Write Rsp 
+    1.763  TX Pi→H10 ATT Read Req【请求】 0300
+    1.861  RX H10→Pi ATT Read Rsp 506f6c617220483130203131434344343338
+    1.861  TX Pi→H10 ATT Read Req【请求】 0500
+    2.006  RX H10→Pi ATT Read Rsp 4103
+    2.006  TX Pi→H10 ATT Read Req【请求】 2500
+    2.007  RX H10→Pi SMP Security Req 09
+    2.007  TX Pi→H10 SMP Pairing Req 010009100d0f
+    2.056  RX H10→Pi ATT Read Rsp 64
+    2.056  TX Pi→H10 ATT Read Req【请求】 2f00
+    2.104  RX H10→Pi SMP Pairing Rsp 030009100103
+    2.105  TX Pi→H10 SMP Pairing Public Key 71d1bc3acf4559c27b3575fb5d6ddb149ef9e19fd94cfe4488554754bbd677a86cf4aca9fa0447bcbf9f2376e6201d1910f74fdd4655d91d067855140bee3cd0
+    2.153  RX H10→Pi ATT Error Rsp 对 Read Req 句柄 0x002f 错误 0x05
+    2.202  RX H10→Pi SMP Pairing Public Key 96aec556fc4419537d4d0181ff2146eea6a401be335b1d8fe79a5af70b3159001edf49dac4810492bd4239614033f9f838eb09633bd70504ad53064b65d529fb
+    2.202  RX H10→Pi SMP Pairing Confirm 01ca375c03a367f960d8ec8f6f45ff95
+    2.203  TX Pi→H10 SMP Pairing Random a190c74e01a235d9bc22af2e249474a4
+    2.299  RX H10→Pi SMP Pairing Random 3eff865dee139b2a4bc59e717816b13b
+    2.299  TX Pi→H10 SMP DHKey Check f2f9b339ccbd7cd89019bc7bf8392aad
+    2.543  RX H10→Pi SMP DHKey Check c334607ece37294f57d2dde67cac976f
+    2.543  CMD 0x2019 LE Start Encryption 400000000000000000000000df373d780fae0b5ff71f2d9d2da90b5e
+    2.543  EVT Command Status 0x2019 LE Start Encryption 状态 00
+    2.835  EVT Encryption Change 00400001
+    2.835  CMD 0x0c7c  4000b80b
+    2.835  TX Pi→H10 ATT Read Req【请求】 2f00
+    2.836  EVT Command Complete 0x0c7c  状态 00
+    2.884  RX H10→Pi SMP Identity Info ac0b2efde582b3253f1808d526020e1f
+    2.933  RX H10→Pi SMP Identity Addr Info 00d4cc11acac24
+    3.031  RX H10→Pi ATT Read Rsp 0f05000000000000000000000000000000
+    3.031  TX Pi→H10 ATT Write Req【请求】 26000100
+    3.127  RX H10→Pi ATT Write Rsp 
+    3.128  TX Pi→H10 ATT Write Req【请求】 30000200
+    3.322  RX H10→Pi ATT Write Rsp 
+    3.324  TX Pi→H10 ATT Write Req【请求】 33000100
+    3.420  RX H10→Pi ATT Write Rsp 
+    3.421  TX Pi→H10 ATT Write Req【请求】 11000100
+    3.517  RX H10→Pi ATT Write Rsp 
+    3.518  TX Pi→H10 ATT Write Req【请求】 2f000100
+    3.664  RX H10→Pi ATT Write Rsp 
+    3.664  RX H10→Pi ATT Indicate 句柄 0x002f f0010000000001820001010e00
+    3.665  TX Pi→H10 ATT Confirm 
+    3.666  TX Pi→H10 ATT Write Req【请求】 2f0002000001820001010e00
+    3.761  RX H10→Pi ATT Write Rsp 
+    3.762  RX H10→Pi ATT Indicate 句柄 0x002f f00200000000
+    3.762  TX Pi→H10 ATT Confirm 
+    3.763  TX Pi→H10 ATT Write Req【请求】 2f000102
+    3.810  RX H10→Pi L2CAP 信令 code 0x12 0308001000280000005802
+    3.810  TX Pi→H10 L2CAP 信令 code 0x13 0302000000
+    3.810  CMD 0x2013 LE Conn Update 4000100028000000580200000000
+    3.811  EVT Command Status 0x2013 LE Conn Update 状态 00
+    3.859  RX H10→Pi ATT Write Rsp 
+    3.860  RX H10→Pi ATT Indicate 句柄 0x002f f0010200000004190032006400c800010110000203020004000800
+    3.860  TX Pi→H10 ATT Confirm 
+    3.861  TX Pi→H10 ATT Write Req【请求】 2f0002020001c8000101100002010800
+    4.054  RX H10→Pi ATT Write Rsp 
+    4.054  RX H10→Pi ATT Indicate 句柄 0x002f f00202000001
+    4.054  TX Pi→H10 ATT Confirm 
+    4.155  EVT LE Conn Update Complete 004000270000005802
+    4.402  **首个 PMD 数据包** RX H10→Pi PMD 数据 类型 02 L2CAP 长 229（此前 HR 通知 1 个）
+   64.060  TX Pi→H10 ATT Write Req【请求】 2f000300
+   64.117  RX H10→Pi ATT Write Rsp 
+   64.117  RX H10→Pi ATT Indicate 句柄 0x002f f003000000
+   64.117  TX Pi→H10 ATT Confirm 
+   64.118  TX Pi→H10 ATT Write Req【请求】 2f000302
+   64.165  RX H10→Pi ATT Write Rsp 
+   64.166  RX H10→Pi ATT Indicate 句柄 0x002f f003020000
+   64.166  TX Pi→H10 ATT Confirm 
+   66.235  CMD 0x0406 Disconnect 400013
+   66.235  EVT Command Status 0x0406 Disconnect 状态 00
+   66.262  EVT Disconnection Complete 00400016
+```
