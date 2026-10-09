@@ -10,7 +10,6 @@ data/**/0[1-8]_*.csv
 data/**/*_Raw_LogFile.csv
 data/**/阅读指南.md
 batch_explain_results/
-诊断输出/*
 logs/
 
 # ===== Python =====
@@ -22,5 +21,5 @@ __pycache__/
 # capture_meta.txt  采集时的七项判据与波形参数
 !data/**/data_info.csv
 !data/**/capture_meta.txt
-# 诊断输出/*.md  测前写定的判据与执行结果，是「先写判据后测」的凭证；csv/png 仍不入库
-!诊断输出/*.md
+# 诊断输出/  测前写定的判据、执行结果，以及结果引用的 csv/png，全部入库（用户 10-09 要求）
+!诊断输出/**
